@@ -1,0 +1,51 @@
+.mylogin { 
+    margin-top: 50px;
+    text-align: center; 
+
+}
+
+h1 { 
+    font-size: 20pt;
+    padding: 20px 0 10px 0;
+}
+
+h2 { 
+    font-size: 15pt;
+    padding-bottom: 10px;
+}
+
+.form-center { 
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    padding: 25px 20px 25px 20px;
+    width: 400px;
+    border: 1px solid lightgray;
+    border-radius: 5%;
+}
+
+label {
+    padding-right: 8px;
+}
+
+input { 
+    padding-left: 10px;
+    border: 1.5px solid black;
+    border-radius: 8px;
+}
+
+button { 
+    font-size: 15px;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+    background-color: black;
+    border: none;
+}
+
+ button:hover { 
+    background-color: lightblue;
+    color: black;
+}

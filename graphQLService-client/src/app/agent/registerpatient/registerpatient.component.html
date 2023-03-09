@@ -1,0 +1,67 @@
+
+<div class="container">
+  <h1>Register Patient</h1>
+  <br>
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()" class="form-center">
+
+    <div class="cross-validation">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control"
+               formControlName="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control"
+               formControlName="password" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" class="form-control"
+               formControlName="firstName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" class="form-control"
+               formControlName="lastName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" class="form-control"
+               formControlName="gender" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="text" id="dateOfBirth" class="form-control"
+               formControlName="dateOfBirth">
+      </div>
+
+      <div class="form-group">
+        <label for="allergies">Allergies</label>
+        <input type="text" id="allergies" class="form-control"
+               formControlName="allergies">
+      </div>
+
+      <div class="form-group">
+        <label for="currentMedications">Current Medications</label>
+        <input type="text" id="currentMedications" class="form-control"
+               formControlName="currentMedications" required>
+      </div>
+      <div class="form-group">
+        <label for="insuranceNumber">Insurance Number</label>
+        <input type="text" id="insuranceNumber" class="form-control"
+               formControlName="insuranceNumber" required>
+      </div>
+      <br>
+      <button type="submit" [disabled]="personForm.invalid">Submit</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,56 @@
+extend type Query {
+    prescriptions(username: String!): [Prescription]
+    allPrescriptions: [Prescription]
+
+}
+
+type Prescription {
+    prescriptionId:String,
+    prescriptionNumber:Int
+    username:String
+    prescriptionDate: String
+    medicationStrength: String
+    amountMedication: String
+    methodAdministration: String
+    frequencyOfAdministration: String
+    optionalConsideration: String
+    status:String
+    verified: String
+    drug:String
+}
+
+extend type Mutation {
+    newPrescription(
+      username: String,
+      prescriptionNumber:Int,
+      prescriptionDate: String
+      medicationStrength: String
+      amountMedication: String
+      methodAdministration: String
+      frequencyOfAdministration: String
+      optionalConsideration: String
+      status:String
+      verified: String
+      drug:String
+
+    ) : Prescription!
+
+    verifyPrescription(id: String): Prescription!
+
+
+    updatePrescription(
+    prescriptionId: String!,
+     prescriptionNumber:Int!,
+     prescriptionDate: String,
+     medicationStrength: String,
+     amountMedication: String,
+     methodAdministration: String,
+     frequencyOfAdministration: String,
+     optionalConsideration: String,
+     status:String,
+     verified: String,
+     drug:String,
+   ) : Prescription!
+
+
+}

@@ -1,0 +1,143 @@
+
+<div class="button-center">
+  <button class="btn"(click)="findAllPatient()">Load Patients</button>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Username</th>
+    <th scope="col">First name</th>
+    <th scope="col">Last name</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Date of Birth</th>
+    <th scope="col">Allergies</th>
+    <th scope="col">Current Medications</th>
+    <th scope="col">Insurance Number</th>
+    <th scope="col">Editing</th>
+
+  </tr>
+  </thead>
+  <tbody class="thead-light">
+  <tr *ngFor="let patient of patients">
+    <td>{{patient.username }}</td>
+
+    <td>{{patient.firstName}}</td>
+    <td>{{patient.lastName}}</td>
+    <td>{{patient.gender}}</td>
+    <td>{{patient.dateOfBirth}}</td>
+    <td>{{patient.allergies}}</td>
+    <td>{{patient.currentMedications}}</td>
+    <td>{{patient.insuranceNumber}}</td>
+    <td>
+      <button (click)="delete(patient)" class="btn btn-danger">Delete Patient</button>
+      <button (click)="modify(patient)"  class="btn btn-primary">Modify Patient</button>
+      <button (click)="CreatePrescription(patient)"  class="btn btn-info">Create Prescription</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<div class="container" id="createPrescriptionForm">
+  <h1>Create Prescription</h1>
+  <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmitPrescription()">
+      <label>Prescription Number</label>
+      <input type="text" id="prescriptionNumber" formControlName="prescriptionNumber" required>
+      <br>
+      <label>Prescription Date</label>
+      <input type="text" id="prescriptionDate" formControlName="prescriptionDate" required>
+      <br>
+      <label>Medication Strength</label>
+      <input type="text" id="medicationStrength" formControlName="medicationStrength" required>
+      <br>
+      <label>Medication Amount</label>
+      <input type="text" id="amount" formControlName="amount" required>
+      <br>
+      <label>Method of Administration</label>
+      <input type="text" id="method" formControlName="method" required>
+      <br>
+      <label>Frequency of Administration</label>
+      <input type="text" id="frequency" formControlName="frequency" required>
+      <br>
+      <label>Optional Consideration</label>
+      <input type="text" id="optional" formControlName="optional" required>
+      <br>
+      <label>Status</label>
+      <input type="text" id="status" formControlName="status" required>
+      <br>
+      <label>Verified</label>
+      <input type="text" id="verified" formControlName="verified" required>
+      <br>
+      <label>Drug</label>
+      <input type="text" id="drug" formControlName="drug" required>
+      <br>
+      <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<div tabindex="-1" class="container" id="modify">
+    <h1>Modify Patient</h1>
+    <form [formGroup]="personForm" (ngSubmit)="onSubmit()" class="form-center">
+
+      <div class="cross-validation">
+        <div class="form-group">
+
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control"
+                 formControlName="username" >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control"
+                 formControlName="password" >
+        </div>
+
+
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" class="form-control"
+                 formControlName="firstName">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" class="form-control"
+                 formControlName="lastName" >
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input type="text" id="gender" class="form-control"
+                 formControlName="gender" >
+        </div>
+
+
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth</label>
+          <input type="text" id="dateOfBirth" class="form-control"
+                 formControlName="dateOfBirth">
+        </div>
+
+        <div class="form-group">
+          <label for="allergies">Allergies</label>
+          <input type="text" id="allergies" class="form-control"
+                 formControlName="allergies">
+        </div>
+
+        <div class="form-group">
+          <label for="currentMedications">Current Medications</label>
+          <input type="text" id="currentMedications" class="form-control"
+                 formControlName="currentMedications" >
+        </div>
+        <div class="form-group">
+          <label for="insuranceNumber">Insurance Number</label>
+          <input type="text" id="insuranceNumber" class="form-control"
+                 formControlName="insuranceNumber" >
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>

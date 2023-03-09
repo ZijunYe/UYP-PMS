@@ -1,0 +1,39 @@
+<!--
+    1. Browse Prescriptions
+-->
+
+
+<table class="table">
+
+  <thead>
+  <tr>
+    <th scope="col">Prescription Number</th>
+    <th scope="col">Prescription Date</th>
+    <th scope="col">Medication Strength</th>
+    <th scope="col">Amount of Medication</th>
+    <th scope="col">Frequency of Administration</th>
+    <th scope="col">Drug</th>
+    <th scope="col">Status</th>
+    <th scope="col"></th>
+  </tr>
+  <!--<tr style="text-align:center;">Verification status updates on refresh</tr>-->
+  </thead>
+  <tbody>
+  <tr *ngFor="let prescription of prescriptions">
+    <td>{{ prescription.prescriptionNumber }}</td>
+    <td>{{ prescription.prescriptionDate }}</td>
+    <td>{{ prescription.medicationStrength }}</td>
+    <td>{{ prescription.amountMedication }}</td>
+    <td>{{ prescription.frequencyOfAdministration }}</td>
+    <td>{{ prescription.drug }}</td>
+    <td>{{ prescription.status }}</td>
+<!-- TODO:    make the button do nothing if presccripton.verified is true -->
+
+    <td *ngIf="prescription.verified != 'true'" ><button (click)="verify(prescription)" class="btn btn-danger">Verify</button></td>
+    <td *ngIf="prescription.verified == 'true'" ><button class="btn btn-danger">Already verified</button></td>
+
+  </tr>
+
+  </tbody>
+</table>
+

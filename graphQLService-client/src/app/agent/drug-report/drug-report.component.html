@@ -1,0 +1,42 @@
+<button class="btn btn-dark"(click)="findAllDrugs()">Load Drugs</button>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Drug Name</th>
+      <th scope="col">Manage</th>
+    </tr>
+    </thead>
+    <tbody class="thead-light">
+    <tr *ngFor="let drug of drugs | keyvalue">
+      <td>{{drug.key }}</td>
+      <td>
+        <button class="btn btn-info" (click)="openPopup(drug.key, drug.value)">Generate Drug Report</button>
+      </td>
+    </tr>
+  
+    </tbody>
+  </table>
+
+  <div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{d}} Report</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{d}} has been prescribed {{dNum}} times.</p>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

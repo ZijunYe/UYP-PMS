@@ -1,0 +1,44 @@
+<!--
+    1. Browse Prescriptions
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" routerLink="/patient">Welcome to Patient page</a>
+    <div >
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login">Sign-Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Prescription Number</th>
+      <th scope="col">Prescription Date</th>
+      <th scope="col">Medication Strength</th>
+      <th scope="col">Amount of Medication</th>
+      <th scope="col">Frequency of Administration</th>
+      <th scope="col">Drug</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prescription of prescriptions">
+      <td>{{ prescription.prescriptionNumber }}</td>
+      <td>{{ prescription.prescriptionDate }}</td>
+      <td>{{ prescription.medicationStrength }}</td>
+      <td>{{ prescription.amountMedication }}</td>
+      <td>{{ prescription.frequencyOfAdministration }}</td>
+      <td>{{ prescription.drug }}</td>
+      <td>{{ prescription.status }}</td>
+    </tr>
+  
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>
+

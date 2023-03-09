@@ -1,0 +1,80 @@
+type Query {
+    users: [User]
+    userById(userId: ID!): User
+    userByUsername(username: String!): User
+}
+
+type User {
+    userId: ID!
+    username:String!
+    password: String!
+    role:String
+    licenceId:String
+    firstName:String
+    lastName: String
+    title:String
+    address: String
+    telephoneNumber: String
+    email: String
+    faxNumber: String
+    gender: String
+    dateOfBirth: String
+    allergies: String
+    currentMedications:String
+    insuranceNumber: String
+    prescriptions:[Prescription]
+
+}
+
+type Mutation {
+    newUser(
+      username:String!,
+      password:String!
+    ) : User!
+
+    newAgent(
+      username:String,
+      password:String,
+      licenceId:String,
+      firstname:String,
+      lastName:String,
+      title:String,
+      telephoneNumber:String,
+      email:String,
+      faxNumber:String,
+
+    ):User!
+
+    newPatient(
+      username:String,
+      password:String,
+      firstname:String,
+      lastName:String,
+      gender: String,
+      dateOfBirth: String,
+      allergies: String,
+      currentMedications:String,
+      insuranceNumber: String
+
+    ):User!
+
+    deleteUser(userId: String) : Boolean
+    updateUser(
+      userId:String,
+      username:String,
+      password: String,
+      role:String,
+      licenceId:String,
+      firstName:String,
+      lastName: String,
+      title:String,
+      address: String,
+      telephoneNumber: String,
+      email: String,
+      faxNumber: String,
+      gender: String,
+      dateOfBirth: String,
+      allergies: String,
+      currentMedications:String,
+      insuranceNumber: String) : User!
+}

@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" routerLink='agent'>Agent Page</a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="./register">Register Patient</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="./browse">Browsing Patient</a>
+        <!--under browsing patient there have three funitionality-->
+        <!--
+        1. Delete patient
+        2.Create prescription
+        3. Modify patient information-->
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="./prescriptions">View Prescriptions</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="./drug">Generate Drug Report</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/login">Sign-Out</a>
+      </li>
+
+    </ul>
+</nav>
+
+<div>
+  <div *ngIf="!selectedUser">
+    <h2>Sorry can't find the requested user...</h2>
+
+  </div>
+
+  <div *ngIf="selectedUser" class="container" >
+    <h2>Welcome {{selectedUser.username}}!</h2>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">Role</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Telephone Number</th>
+      <th scope="col">Licence Id</th>
+      <th scope="col">Fax Number</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngIf="selectedUser">
+      <td>{{selectedUser.username }}</td>
+      <td>{{selectedUser.role}}</td>
+      <td>{{selectedUser.firstName}}</td>
+      <td>{{selectedUser.lastName}}</td>
+      <td>{{selectedUser.telephoneNumber}}</td>
+      <td>{{selectedUser.licenceId}}</td>
+      <td>{{selectedUser.faxNumber}}</td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+  <!--<button class="btn"(click)="check()">Check my information</button>-->
+
+<router-outlet></router-outlet>
+

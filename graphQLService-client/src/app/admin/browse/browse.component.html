@@ -1,0 +1,107 @@
+
+<button (click)="findAllAgent()">Load Agent</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">username</th>
+    <th scope="col">licenceId</th>
+    <th scope="col">firstName</th>
+    <th scope="col">lastName</th>
+    <th scope="col">Editing</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let agent of agents">
+    <td>{{agent.username }}</td>
+    <td>{{agent.licenceId}}</td>
+    <td>{{agent.firstName}}</td>
+    <td>{{agent.lastName}}</td>
+    <td>
+      <button (click)="delete(agent)" class="btn btn-danger">Delete Agent</button>
+      <button (click)="modify(agent)"  class="btn btn-primary">Modify Agent</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<div class="container" id="modify">
+  <h1>Modify Agent</h1>
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+
+    <div class="cross-validation">
+      <div class="form-group">
+
+        <label for="username">username</label>
+        <input type="text" id="username" class="form-control"
+               formControlName="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" id="password" class="form-control"
+               formControlName="password">
+      </div>
+
+      <div class="form-group">
+        <label for="lienceId">licenceId</label>
+        <input type="text" id="lienceId" class="form-control"
+               formControlName="lienceId"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" class="form-control"
+               formControlName="firstName"
+
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" class="form-control"
+               formControlName="lastName"
+
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="title">title</label>
+        <input type="text" id="title" class="form-control"
+               formControlName="title"
+
+        >
+      </div>
+
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" class="form-control"
+               formControlName="phoneNumber"
+
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="emailAddress">Email Address</label>
+        <input type="text" id="emailAddress" class="form-control"
+               formControlName="emailAddress"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="faxNumber">fax Number</label>
+        <input type="text" id="faxNumber" class="form-control"
+               formControlName="faxNumber"
+        >
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="hide()"type="submit" class="btn btn-success" [disabled]="personForm.invalid">Update</button>
+  </form>
+</div>

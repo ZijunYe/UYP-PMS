@@ -1,0 +1,26 @@
+<div class="mylogin">
+  <img src="../../assets/logo-bw.jpg" width="100">
+  <h1>UMELAPHI YAODIAN PHARMACY</h1>
+
+  <div class="form-center">
+  <form (ngSubmit)="onSubmit(userName.value, password.value)">
+    <label for="userName">Username</label>
+    <input type="text" id="userName" required #userName>
+
+    <br>
+    <br>
+    <label for="password">Password </label>
+    <input type="password" id="password" required #password>
+
+    <br>
+    <br>
+    <button class="btn" type="submit">Log in</button>
+
+    <br>
+    <br>
+    <i><b>Note: </b>If you are looking to register an account, please visit
+      the receptionist.</i>
+  </form>
+</div>
+</div>
+
