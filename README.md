@@ -1,4 +1,4 @@
-# Deliverable 3
+# Pharmacy Prescription Management System
 |Name|student number|
 |---|---|
 |Alexander Yu|300120635|
