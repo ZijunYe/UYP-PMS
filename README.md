@@ -1,5 +1,5 @@
 # Pharmacy Prescription Management System
-Project presentation: [https://youtu.be/RXlMCf0Cd1M]
+Project presentation: https://youtu.be/RXlMCf0Cd1M
 |Name|student number|
 |---|---|
 |Alexander Yu|300120635|
